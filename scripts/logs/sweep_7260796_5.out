@@ -1,0 +1,57 @@
+17:29:35 [INFO] post_training.behavior_clustering.src.config: Config loaded (YAML): /tmp/birch_sweep_mrIYOQ.yaml
+17:29:35 [INFO] behavior_clustering: Settings: {
+  "random_state": 42,
+  "fps": 20,
+  "smoothing_alpha": 0.7,
+  "birch_threshold": 13.0,
+  "birch_branching_factor": 500,
+  "birch_batch_size": 10000,
+  "linkage_method": "ward",
+  "distance_threshold": 75.0,
+  "gpu_batch_size": 256,
+  "eval_distance_thresholds": [
+    60.0,
+    65.0,
+    70.0,
+    75.0,
+    80.0,
+    85.0,
+    90.0,
+    95.0
+  ]
+}
+17:29:35 [INFO] behavior_clustering: Loading embeddings …
+17:30:34 [INFO] post_training.behavior_clustering.src.data: Loaded 2974 segments (3999504 total frames, 128 dims) from /home/shares/schaerm/schaer2/thibaut/humanlisbet/output/full_train/embeddings/models/hlis-gr-w1200-o600-L8-H8-E128-FF512-auggeom-embedder/embeddings/train
+17:30:44 [INFO] post_training.behavior_clustering.src.data: Loaded 452 segments (708169 total frames, 128 dims) from /home/shares/schaerm/schaer2/thibaut/humanlisbet/output/full_train/embeddings/models/hlis-gr-w1200-o600-L8-H8-E128-FF512-auggeom-embedder/embeddings/test
+17:30:44 [INFO] behavior_clustering: Smoothing (alpha=0.70) …
+17:31:30 [INFO] post_training.behavior_clustering.src.smoothing: Smoothed 2974 segments (alpha=0.70) → 3999504 total frames
+17:31:38 [INFO] post_training.behavior_clustering.src.smoothing: Smoothed 452 segments (alpha=0.70) → 708169 total frames
+17:40:44 [INFO] behavior_clustering: Scaling with RobustScaler …
+17:40:52 [INFO] post_training.behavior_clustering.src.preprocessing: RobustScaler fitted on 3999504 samples × 128 features
+17:40:53 [INFO] post_training.behavior_clustering.src.preprocessing: Scaler saved → post_training/behavior_clustering/results/sweep_birch_thr_13.0/scaler.joblib
+17:41:06 [INFO] behavior_clustering: BIRCH subclustering …
+17:42:09 [INFO] post_training.behavior_clustering.src.clustering: BIRCH fitted: 1 subclusters (threshold=13.0, branching_factor=500)
+17:42:09 [INFO] post_training.behavior_clustering.src.clustering: BIRCH model saved → post_training/behavior_clustering/results/sweep_birch_thr_13.0/birch_model.joblib
+17:42:09 [INFO] behavior_clustering: GPU label assignment …
+17:42:14 [INFO] post_training.behavior_clustering.src.clustering: GPU label assignment: 3999504 frames → 1 centroids
+17:42:14 [INFO] post_training.behavior_clustering.src.clustering: GPU label assignment: 708169 frames → 1 centroids
+17:42:22 [INFO] behavior_clustering: Hierarchical refinement …
+17:42:22 [INFO] post_training.behavior_clustering.src.clustering: Computing ward linkage on 1 subcluster centroids …
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/run_clustering.py", line 367, in <module>
+    main()
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/run_clustering.py", line 222, in main
+    sub_labels, linkage_mat = hierarchical_refinement(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/clustering.py", line 171, in hierarchical_refinement
+    linkage_matrix = linkage(
+                     ^^^^^^^^
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/scipy/cluster/hierarchy.py", line 1049, in linkage
+    n = distance.num_obs_y(y)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/scipy/spatial/distance.py", line 2749, in num_obs_y
+    raise ValueError("The number of observations cannot be determined on "
+ValueError: The number of observations cannot be determined on an empty distance matrix.
+SLURM array task 5 (threshold=13.0) finished with exit code 0

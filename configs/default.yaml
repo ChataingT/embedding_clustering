@@ -1,0 +1,69 @@
+# ─────────────────────────────────────────────────────────────
+# Behavior Clustering Pipeline — Default Configuration
+# ─────────────────────────────────────────────────────────────
+# Two-stage BIRCH + final clustering on LISBET embeddings.
+# All sections are optional; omitted sections use these defaults.
+
+global:
+  random_state: 42
+  fps: 20                          # Video frame rate (for bout-length reporting)
+
+preprocessing:
+  smoothing:
+    method: median                 # none | ema | median
+    alpha: 0.7                     # Used when method=ema
+    median_window: 5               # Used when method=median; must be odd
+
+reduction:
+  method: none                     # none | umap
+  umap:
+    n_components: 15
+    n_neighbors: 30
+    min_dist: 0.1
+    metric: euclidean
+    random_state: 42
+    search:
+      enabled: false
+      n_neighbors_grid: [15, 30, 60, 90, 120]   # medium grid
+      min_dist_grid: [0.0, 0.05, 0.1, 0.2]      # medium grid
+  validation:
+    metric: dbcv
+    cv_mode: train_segment_kfold
+    n_splits: 5
+
+birch:
+  threshold: 9.0                   # CF-tree leaf radius; controls subcluster granularity.
+                                   # Higher → fewer, coarser subclusters.
+  branching_factor: 500            # Maximum children per CF-tree node.
+  batch_size: 10000                # Frames per partial_fit call (memory trade-off).
+
+hierarchy:
+  linkage_method: ward             # Linkage criterion (ward | complete | average).
+  distance_threshold: 75.0         # Cut height on the dendrogram.
+
+clustering:
+  method: agglomerative            # agglomerative | hdbscan
+  hdbscan:
+    min_cluster_size: 10
+    min_samples: 5
+    cluster_selection_method: eom  # eom | leaf
+    metric: euclidean
+
+gpu:
+  batch_size: 256                  # Frames per GPU batch for nearest-centroid assignment.
+
+evaluation:
+  distance_thresholds:             # Sweep these thresholds to produce the metrics-vs-distance plot.
+    - 60
+    - 65
+    - 70
+    - 75
+    - 80
+    - 85
+    - 90
+    - 95
+
+artifacts:
+  mode: standard                   # minimal | standard | verbose
+  save_stage_data: true
+  save_stage_plots: true

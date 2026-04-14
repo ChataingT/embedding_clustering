@@ -1,0 +1,48 @@
+14:36:37 [INFO] post_training.behavior_clustering.src.config: Config loaded (YAML): /tmp/birch_sweep_a6JIOo.yaml
+14:36:37 [INFO] behavior_clustering: Settings: {
+  "random_state": 42,
+  "fps": 20,
+  "smoothing_alpha": 0.7,
+  "birch_threshold": 2.8,
+  "birch_branching_factor": 500,
+  "birch_batch_size": 10000,
+  "linkage_method": "ward",
+  "distance_threshold": 75.0,
+  "gpu_batch_size": 256,
+  "eval_distance_thresholds": [
+    60.0,
+    65.0,
+    70.0,
+    75.0,
+    80.0,
+    85.0,
+    90.0,
+    95.0
+  ]
+}
+14:36:38 [INFO] behavior_clustering: Loading embeddings …
+14:38:33 [INFO] post_training.behavior_clustering.src.data: Loaded 2974 segments (3999504 total frames, 128 dims) from /home/shares/schaerm/schaer2/thibaut/humanlisbet/output/full_train/embeddings/models/hlis-gr-w1200-o600-L8-H8-E128-FF512-auggeom-embedder/embeddings/train
+14:38:47 [INFO] post_training.behavior_clustering.src.data: Loaded 452 segments (708169 total frames, 128 dims) from /home/shares/schaerm/schaer2/thibaut/humanlisbet/output/full_train/embeddings/models/hlis-gr-w1200-o600-L8-H8-E128-FF512-auggeom-embedder/embeddings/test
+14:38:47 [INFO] behavior_clustering: Smoothing (alpha=0.70) …
+14:39:35 [INFO] post_training.behavior_clustering.src.smoothing: Smoothed 2974 segments (alpha=0.70) → 3999504 total frames
+14:39:43 [INFO] post_training.behavior_clustering.src.smoothing: Smoothed 452 segments (alpha=0.70) → 708169 total frames
+14:48:49 [INFO] behavior_clustering: Scaling with RobustScaler …
+14:48:57 [INFO] post_training.behavior_clustering.src.preprocessing: RobustScaler fitted on 3999504 samples × 128 features
+14:48:59 [INFO] post_training.behavior_clustering.src.preprocessing: Scaler saved → post_training/behavior_clustering/results/sweep_birch_thr_2.8/scaler.joblib
+14:49:12 [INFO] behavior_clustering: BIRCH subclustering …
+14:51:22 [INFO] post_training.behavior_clustering.src.clustering: BIRCH fitted: 51563 subclusters (threshold=2.8, branching_factor=500)
+14:51:32 [INFO] post_training.behavior_clustering.src.clustering: BIRCH model saved → post_training/behavior_clustering/results/sweep_birch_thr_2.8/birch_model.joblib
+14:51:32 [INFO] behavior_clustering: GPU label assignment …
+14:51:49 [INFO] post_training.behavior_clustering.src.clustering: GPU label assignment: 3999504 frames → 51563 centroids
+14:51:52 [INFO] post_training.behavior_clustering.src.clustering: GPU label assignment: 708169 frames → 51563 centroids
+14:52:00 [INFO] behavior_clustering: Hierarchical refinement …
+14:52:00 [INFO] post_training.behavior_clustering.src.clustering: Computing ward linkage on 51563 subcluster centroids …
+14:55:37 [INFO] post_training.behavior_clustering.src.clustering: Hierarchical cut at distance=75.0 → 127 clusters
+14:55:45 [INFO] behavior_clustering: Running evaluation …
+14:59:01 [INFO] post_training.behavior_clustering.src.evaluation: Quality metrics computed for 8 thresholds [60 … 95]
+15:00:19 [INFO] post_training.behavior_clustering.src.evaluation: Cross-video: 127 clusters, 0 segment-specific (0%), 0 widespread (0%)
+15:00:20 [INFO] post_training.behavior_clustering.src.evaluation: Cross-video: 127 clusters, 0 segment-specific (0%), 0 widespread (0%)
+15:00:20 [INFO] behavior_clustering: Generating figures …
+15:01:53 [INFO] post_training.behavior_clustering.src.visualization: Skipping heatmap: 127 clusters > max_clusters=50
+15:01:53 [INFO] behavior_clustering: Pipeline complete in 1515.5 s — 127 clusters, stability=0.963 (train) / 0.903 (test)
+SLURM array task 0 (threshold=2.8) finished with exit code 0

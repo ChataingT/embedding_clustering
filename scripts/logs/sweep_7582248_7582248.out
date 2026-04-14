@@ -1,0 +1,167 @@
+08:43:22 [INFO] post_training.behavior_clustering.src.config: Config loaded (YAML): post_training/behavior_clustering/configs/v2.yaml
+08:43:22 [INFO] behavior_clustering: Settings: {
+  "random_state": 42,
+  "fps": 20,
+  "smoothing_method": "median",
+  "smoothing_alpha": 0.7,
+  "smoothing_median_window": 5,
+  "reduction_method": "umap",
+  "umap_n_components": 15,
+  "umap_n_neighbors": 30,
+  "umap_min_dist": 0.1,
+  "umap_metric": "euclidean",
+  "umap_random_state": 42,
+  "umap_search_enabled": false,
+  "umap_search_n_neighbors_grid": [
+    5,
+    10,
+    15,
+    20,
+    30
+  ],
+  "umap_search_min_dist_grid": [
+    0.0,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "reduction_validation_metric": "dbcv",
+  "reduction_validation_cv_mode": "train_segment_kfold",
+  "reduction_validation_n_splits": 5,
+  "reduction_validation_n_jobs": 16,
+  "birch_threshold": 9.0,
+  "birch_branching_factor": 500,
+  "birch_batch_size": 10000,
+  "linkage_method": "ward",
+  "distance_threshold": 75.0,
+  "clustering_method": "hdbscan",
+  "hdbscan_min_cluster_size": 1000,
+  "hdbscan_min_samples": 50,
+  "hdbscan_cluster_selection_method": "leaf",
+  "hdbscan_metric": "euclidean",
+  "hdbscan_search_enabled": true,
+  "hdbscan_search_min_cluster_size_grid": [
+    100,
+    300,
+    600,
+    1000
+  ],
+  "hdbscan_search_min_samples_grid": [
+    10,
+    30,
+    50
+  ],
+  "hdbscan_search_scoring": "relative_validity",
+  "hdbscan_search_n_jobs": 8,
+  "gpu_batch_size": 256,
+  "eval_distance_thresholds": [
+    60.0,
+    65.0,
+    70.0,
+    75.0,
+    80.0,
+    85.0,
+    90.0,
+    95.0
+  ],
+  "artifact_mode": "standard",
+  "save_stage_data": true,
+  "save_stage_plots": true
+}
+08:43:22 [INFO] behavior_clustering: Loading embeddings …
+08:48:00 [INFO] post_training.behavior_clustering.src.data: Loaded 2974 segments (3999504 total frames, 128 dims) from /home/shares/schaerm/schaer2/thibaut/humanlisbet/output/full_train/embeddings/models/hlis-gr-w1200-o600-L8-H8-E128-FF512-auggeom-embedder/embeddings/train
+08:48:41 [INFO] post_training.behavior_clustering.src.data: Loaded 452 segments (708169 total frames, 128 dims) from /home/shares/schaerm/schaer2/thibaut/humanlisbet/output/full_train/embeddings/models/hlis-gr-w1200-o600-L8-H8-E128-FF512-auggeom-embedder/embeddings/test
+08:48:41 [INFO] behavior_clustering: Smoothing (method=median, alpha=0.70, median_window=5) …
+08:50:40 [INFO] post_training.behavior_clustering.src.smoothing: Smoothed 2974 segments (method=median) → 3999504 total frames
+08:51:01 [INFO] post_training.behavior_clustering.src.smoothing: Smoothed 452 segments (method=median) → 708169 total frames
+09:08:10 [INFO] behavior_clustering: Scaling with RobustScaler …
+09:08:17 [INFO] post_training.behavior_clustering.src.preprocessing: RobustScaler fitted on 3999504 samples × 128 features
+09:08:19 [INFO] post_training.behavior_clustering.src.preprocessing: Scaler saved → post_training/behavior_clustering/results/v2/scaler.joblib
+09:08:21 [INFO] behavior_clustering: UMAP reduction enabled …
+/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/sklearn/manifold/_spectral_embedding.py:453: UserWarning: Exited at iteration 425 with accuracies 
+[3.88045396e-15 2.09262449e-05 2.57496989e-05 2.67500193e-05
+ 1.95671387e-05 1.78361404e-05 2.80136107e-05 2.88484304e-05
+ 3.46967719e-05 2.58375831e-05 4.29211712e-05 2.29670158e-05
+ 2.99055748e-05 3.22733241e-05 3.12373200e-05 3.16179319e-05
+ 3.21043662e-05]
+not reaching the requested tolerance 3.2395124435424805e-05.
+Use iteration 425 instead with accuracy 
+2.654425542382608e-05.
+
+  _, diffusion_map = lobpcg(
+/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/sklearn/manifold/_spectral_embedding.py:453: UserWarning: Exited postprocessing with accuracies 
+[2.68439322e-15 2.09262447e-05 2.57496989e-05 2.67500192e-05
+ 1.95671389e-05 1.78361404e-05 2.80136129e-05 2.88484283e-05
+ 3.46967714e-05 2.58375839e-05 4.29211729e-05 2.29670127e-05
+ 2.99055746e-05 3.22733240e-05 3.12373200e-05 3.16179320e-05
+ 3.21043662e-05]
+not reaching the requested tolerance 3.2395124435424805e-05.
+  _, diffusion_map = lobpcg(
+/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/umap/spectral.py:548: UserWarning: Spectral initialisation failed! The eigenvector solver
+failed. This is likely due to too small an eigengap. Consider
+adding some noise or jitter to your data.
+
+Falling back to random initialisation!
+  warn(
+12:48:51 [INFO] post_training.behavior_clustering.src.reduction: Reducer saved -> post_training/behavior_clustering/results/v2/umap_reducer.joblib
+12:48:54 [INFO] behavior_clustering: BIRCH subclustering …
+12:49:54 [INFO] post_training.behavior_clustering.src.clustering: BIRCH fitted: 1 subclusters (threshold=9.0, branching_factor=500)
+12:49:54 [INFO] post_training.behavior_clustering.src.clustering: BIRCH model saved → post_training/behavior_clustering/results/v2/birch_model.joblib
+12:49:54 [INFO] behavior_clustering: GPU label assignment …
+12:50:00 [INFO] post_training.behavior_clustering.src.clustering: GPU label assignment: 3999504 frames → 1 centroids
+12:50:01 [INFO] post_training.behavior_clustering.src.clustering: GPU label assignment: 708169 frames → 1 centroids
+12:50:16 [INFO] behavior_clustering: HDBSCAN refinement …
+12:50:16 [INFO] behavior_clustering: Running HDBSCAN grid search (scoring=relative_validity, workers=8) …
+12:50:17 [INFO] post_training.behavior_clustering.src.clustering: HDBSCAN search using 8 worker threads over 12 combinations
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/run_clustering.py", line 623, in <module>
+    main()
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/run_clustering.py", line 383, in main
+    selected_hdbscan_params, hdbscan_search_df = search_hdbscan_params(
+                                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/clustering.py", line 373, in search_hdbscan_params
+    rows = list(executor.map(lambda p: _score_combo(p[0], p[1]), combos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/clustering.py", line 373, in <lambda>
+    rows = list(executor.map(lambda p: _score_combo(p[0], p[1]), combos))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/clustering.py", line 332, in _score_combo
+    labels = clusterer.fit_predict(subcluster_centers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/hdbscan/hdbscan_.py", line 1312, in fit_predict
+    self.fit(X)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/hdbscan/hdbscan_.py", line 1272, in fit
+    ) = hdbscan(clean_data, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/hdbscan/hdbscan_.py", line 868, in hdbscan
+    (single_linkage_tree, result_min_span_tree) = memory.cache(
+                                                  ^^^^^^^^^^^^^
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/memory.py", line 326, in __call__
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/hdbscan/hdbscan_.py", line 346, in _hdbscan_boruvka_kdtree
+    alg = KDTreeBoruvkaAlgorithm(
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "hdbscan/_hdbscan_boruvka.pyx", line 393, in hdbscan._hdbscan_boruvka.KDTreeBoruvkaAlgorithm.__init__
+  File "hdbscan/_hdbscan_boruvka.pyx", line 435, in hdbscan._hdbscan_boruvka.KDTreeBoruvkaAlgorithm._compute_bounds
+  File "sklearn/neighbors/_binary_tree.pxi", line 1180, in sklearn.neighbors._kd_tree.BinaryTree64.query
+ValueError: k must be less than or equal to the number of training points
+SLURM array task   finished with exit code 1

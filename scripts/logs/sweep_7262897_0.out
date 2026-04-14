@@ -1,0 +1,2464 @@
+10:25:32 [INFO] post_training.behavior_clustering.src.config: Config loaded (YAML): /tmp/birch_sweep_869Oxe.yaml
+10:25:32 [INFO] behavior_clustering: Settings: {
+  "random_state": 42,
+  "fps": 20,
+  "smoothing_alpha": 0.7,
+  "birch_threshold": 1.0,
+  "birch_branching_factor": 500,
+  "birch_batch_size": 10000,
+  "linkage_method": "ward",
+  "distance_threshold": 75.0,
+  "gpu_batch_size": 256,
+  "eval_distance_thresholds": [
+    60.0,
+    65.0,
+    70.0,
+    75.0,
+    80.0,
+    85.0,
+    90.0,
+    95.0
+  ]
+}
+10:25:32 [INFO] behavior_clustering: Loading embeddings …
+10:29:46 [INFO] post_training.behavior_clustering.src.data: Loaded 2974 segments (3999504 total frames, 128 dims) from /home/shares/schaerm/schaer2/thibaut/humanlisbet/output/full_train/embeddings/models/hlis-gr-w1200-o600-L8-H8-E128-FF512-auggeom-embedder/embeddings/train
+10:30:25 [INFO] post_training.behavior_clustering.src.data: Loaded 452 segments (708169 total frames, 128 dims) from /home/shares/schaerm/schaer2/thibaut/humanlisbet/output/full_train/embeddings/models/hlis-gr-w1200-o600-L8-H8-E128-FF512-auggeom-embedder/embeddings/test
+10:30:25 [INFO] behavior_clustering: Smoothing (alpha=0.70) …
+10:31:11 [INFO] post_training.behavior_clustering.src.smoothing: Smoothed 2974 segments (alpha=0.70) → 3999504 total frames
+10:31:20 [INFO] post_training.behavior_clustering.src.smoothing: Smoothed 452 segments (alpha=0.70) → 708169 total frames
+10:40:16 [INFO] behavior_clustering: Scaling with RobustScaler …
+10:40:24 [INFO] post_training.behavior_clustering.src.preprocessing: RobustScaler fitted on 3999504 samples × 128 features
+10:40:26 [INFO] post_training.behavior_clustering.src.preprocessing: Scaler saved → post_training/behavior_clustering/results/sweep_birch_thr_1.0/scaler.joblib
+10:40:31 [INFO] behavior_clustering: BIRCH subclustering …
+10:43:15 [INFO] post_training.behavior_clustering.src.clustering: BIRCH fitted: 276593 subclusters (threshold=1.0, branching_factor=500)
+Traceback (most recent call last):
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 926, in save_list
+    self._batch_appends(obj)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 950, in _batch_appends
+    save(x)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 966, in save_dict
+    self._batch_setitems(obj.items())
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 990, in _batch_setitems
+    save(v)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 381, in save
+    Pickler.save(self, wrapper)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 597, in save
+    self.save_reduce(obj=obj, *rv)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 711, in save_reduce
+    save(state)
+  File "/home/shares/schaerm/schaer2/thibaut/humanlisbet/lisbet_venv/lib/python3.12/site-packages/joblib/numpy_pickle.py", line 395, in save
+    return Pickler.save(self, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 554, in save
+    f(self, obj)  # Call unbound method with explicit self
+    ^^^^^^^^^^^^
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 965, in save_dict
+    self.memoize(obj)
+  File "/opt/ebsofts/Python/3.12.3-GCCcore-13.3.0/lib/python3.12/pickle.py", line 504, in memoize
+    self.write(self.put(idx))
+               ^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+SLURM array task 0 (threshold=1.0) finished with exit code 0

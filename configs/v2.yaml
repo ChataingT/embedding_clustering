@@ -1,0 +1,76 @@
+# ─────────────────────────────────────────────────────────────
+# Behavior Clustering Pipeline — Default Configuration
+# ─────────────────────────────────────────────────────────────
+# Two-stage BIRCH + final clustering on LISBET embeddings.
+# All sections are optional; omitted sections use these defaults.
+
+global:
+  random_state: 42
+  fps: 20                          # Video frame rate (for bout-length reporting)
+
+preprocessing:
+  smoothing:
+    method: median                 # none | ema | median
+    alpha: 0.7                     # Used when method=ema
+    median_window: 5               # Used when method=median; must be odd
+
+reduction:
+  method: umap                     # none | umap
+  umap:
+    n_components: 15
+    n_neighbors: 30
+    min_dist: 0.1
+    metric: euclidean
+    random_state: 42
+    search:
+      enabled: false
+      n_neighbors_grid: [5, 10, 15, 20, 30]   # medium grid
+      min_dist_grid: [0.0, 0.05, 0.1, 0.2]      # medium grid
+  validation:
+    metric: dbcv
+    cv_mode: train_segment_kfold
+    n_splits: 5
+    n_jobs: 16
+
+birch:
+  threshold: 9.0                   # CF-tree leaf radius; controls subcluster granularity.
+                                   # Higher → fewer, coarser subclusters.
+  branching_factor: 500            # Maximum children per CF-tree node.
+  batch_size: 10000                # Frames per partial_fit call (memory trade-off).
+
+hierarchy:
+  linkage_method: ward             # Linkage criterion (ward | complete | average).
+  distance_threshold: 75.0         # Cut height on the dendrogram.
+
+clustering:
+  method: hdbscan            # agglomerative | hdbscan
+  hdbscan:
+    min_cluster_size: 1000
+    min_samples: 50
+    cluster_selection_method: leaf  # eom | leaf
+    metric: euclidean
+    search:
+      enabled: true
+      min_cluster_size_grid: [100, 300, 600, 1000]
+      min_samples_grid: [10, 30, 50]
+      scoring: relative_validity      # dbcv | relative_validity
+      n_jobs: 16
+
+gpu:
+  batch_size: 256                  # Frames per GPU batch for nearest-centroid assignment.
+
+evaluation:
+  distance_thresholds:             # Sweep these thresholds to produce the metrics-vs-distance plot.
+    - 60
+    - 65
+    - 70
+    - 75
+    - 80
+    - 85
+    - 90
+    - 95
+
+artifacts:
+  mode: standard                   # minimal | standard | verbose
+  save_stage_data: true
+  save_stage_plots: true

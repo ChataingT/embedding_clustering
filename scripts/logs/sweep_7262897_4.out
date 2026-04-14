@@ -1,0 +1,14 @@
+10:25:32 [INFO] post_training.behavior_clustering.src.config: Config loaded (YAML): /tmp/birch_sweep_nBkq1b.yaml
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/run_clustering.py", line 377, in <module>
+    main()
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/run_clustering.py", line 137, in main
+    s = apply_config(cfg_raw)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/beegfs/scratch/shares/schaerm/schaer2/video_sam2_pose/humanLISBET-paper/post_training/behavior_clustering/src/config.py", line 157, in apply_config
+    s["birch_threshold"] = float(b["threshold"])
+                           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+SLURM array task 4 (threshold=) finished with exit code 0
